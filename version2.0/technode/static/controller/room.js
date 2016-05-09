@@ -1,4 +1,5 @@
-angular.module('techNodeApp').controller('RoomCtrl',function($scope,socket){
+angular.module('techNodeApp',[])
+.controller('RoomCtrl',function($scope,socket){
 	$scope.messages = [];
 	
 	socket.on('allMessage',function(messages){

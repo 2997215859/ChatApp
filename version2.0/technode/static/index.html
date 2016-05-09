@@ -2,14 +2,24 @@
 <html ng-app="techNodeApp" lang="en">
 <head>
 	<meta charset="UTF-8">
+	<base href="/ChatApp/version2.0/technode/static/" />
 	<title>techNode</title>
 	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/styles/room.css">
-	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="/components/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/components/angular/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/room.css">
+	<script type="text/javascript" src="../node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+	<script type="text/javascript" src="components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="components/angular/angular.js"></script>
 	<script type="text/javascript" src="components/angular-route/angular-route.min.js"></script>
+
+	
+	<script type="text/javascript" src="services/socket.js"></script>
+	<script type="text/javascript" src="directive/auto-scroll-to-bottom.js"></script>
+	<script type="text/javascript" src="directive/ctrl-enter-break-line.js"></script>
+	<script type="text/javascript" src="controller/message-creator.js"></script>
+	<script type="text/javascript" src="controller/room.js"></script>
+	<script type="text/javascript" src="router.js"></script>
+	<script type="text/javascript" src="techNode.js"></script>
 </head>
 <body>
 <!-- 	<script type="text/javascript">
@@ -27,30 +37,9 @@
 	  </div>
 	</div>
 	<div class="container" style="margin-top: 100px">
-		<div class="col-md-12">
-			<div class="panel panel-default room" ng-controller="RoomCtrl">
-
-				<div class="panel-heading room-header">TechNode</div>
-				<div class="panel-body room-content">
-					<div class="list-group messages" auto-scroll-to-bottom>
-						<div class="list-group-item message" ng-repeat="message in messages track by $index">
-							某某：{{message}}
-						</div>
-					</div>
-					<form class="message-creator" ng-controller="MessageCreatorCtrl">
-						<div class="form-group">
-							<textarea required ng-model="newMessage" ctrl-enter-break-line="createMessage()" class="form-control" placeholder="Ctrl+Enter to quick send"></textarea>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+		<div class="row" ng-view></div>
 	</div>
 	<!-- <script type="text/javascript" src="/techNode.js"></script> -->
-	<script type="text/javascript" src="services/socket.js"></script>
-	<script type="text/javascript" src="directive/auto-scroll-to-bottom.js"></script>
-	<script type="text/javascript" src="directive/ctrl-enter-break-line.js"></script>
-	<script type="text/javascript" src="controller/message-creator.js"></script>
-	<script type="text/javascript" src="controller/room.js"></script>
+
 </body>
 </html>

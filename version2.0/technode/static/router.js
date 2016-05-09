@@ -1,12 +1,17 @@
-angular.module('techNodeApp').config(function($routeProvider,$locationProvider){
+/*angular.module('routeModule',['ngRoute'])
+.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
 	$locationProvider.html5Mode(true);
-	$routeProvider.$.when('',{
-		templateUrl:'/pages/room.html',
+	//开启HTML5的模式，高级浏览器会重写url？低级浏览器会自动降级重定向到#开头的？
+	$routeProvider
+	.when('/',{
+		templateUrl:'pages/room.html',
 		controller:'RoomCtrl'
-	}).when('/login',{
-		templateUrl:'/pages/login.html',
+	})
+	.when('/login',{
+		templateUrl:'pages/login.html',
 		controller:'LoginCtrl'
-	}).otherwise({
+	})
+	.otherwise({
 		redirectTo:'/login'
 	});
-});
+}]);*/
